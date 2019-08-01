@@ -11,10 +11,26 @@ if (! defined( 'ABSPATH' ) ) {
 			if ( $myaccount_page_id ) {
 				$myaccount_page_url = get_permalink( $myaccount_page_id );
 			} 
+
+		$cart_page_url = get_permalink( 50 );	
 		?>
+         <div class="fix-a-block">
+              <p class="fix-a-header">
+              	   <a href="<?php echo $cart_page_url; ?>">Корзина</a></p>
+              <p class="fix-a-header">
+              	   <a href="<?php echo $myaccount_page_url; ?>"><?php echo $header_account; ?>
+				
+			       </a>
+		</p>
+		</div>	
+<!--
 		<ul>
 	
-			<li class="way" id="toFooter"><a href="http://gorkastore.uxp.ru/kak-dobratsya/"><?php echo $header_way; ?></a></li>
-			<li class="way"><a href="<?php echo $myaccount_page_url; ?>"><?php echo $header_account; ?></a></li>
-		</ul>					
+			<li class="way" ><a href="<?php echo $cart_page_url; ?>">Корзина</a></li>
+
+			<li class="way"><a href="<?php echo $myaccount_page_url; ?>"><?php echo $header_account; ?>
+				
+			</a></li>
+		</ul>
+			-->						
 	</div>

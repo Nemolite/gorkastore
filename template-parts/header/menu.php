@@ -8,6 +8,7 @@ if (! defined( 'ABSPATH' ) ) {
 				<div class="navi-wrap hide-on-med-and-down">
 					<div class="sub-navi-wrap">
 						<nav class="valign-wrapper main-nav">
+                          <!-- Функция описана в файле navigations.php, папка includes -->							
 							<?php gorka_primary_menu(); ?>
 						</nav>				
 					</div>

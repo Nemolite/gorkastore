@@ -43,7 +43,7 @@
 			<ul>
 				<li>Покупателю</li>
 				<li><a href="<?php echo get_bloginfo('template_url')?>/sposoby-oplaty/">Способы оплаты</a></li>
-				<li><a href="<?php echo get_bloginfo('template_url')?>/informaciya-o-dostavke/">Доставка</a></li>
+				<li><a href="<?php echo get_bloginfo('template_url')?>/informaciya-o-dostavke/">Условия доставки</a></li>
 				<li><a href="<?php echo get_bloginfo('template_url')?>/svyazatsya-s-nami/">Связаться с нами</a></li>
 				<!-- <li><a href="#showMap" class="modal-trigger">Мы на карте</a></li> -->
 			</ul>
@@ -52,8 +52,9 @@
 			<ul>
 				<li>Магазин</li>
 				<li><a href="<?php echo get_bloginfo('template_url')?>/o-nas/">О нас</a></li>
-				<!--
-				<li><a href="">Контакты</a></li>
+			
+				<li><a href="<?php echo get_bloginfo('template_url')?>/kak-dobratsya/">Как добратся</a></li>
+				<!--	
 				<li><a href="">Адрес</a></li>
 				-->
 			</ul>
@@ -69,7 +70,7 @@
 		<div class="col xl3 l6 m6 s12">
 			<ul>
 				<li>Юридическая информация</li>
-				<li><a href="">Условия продажи</a></li>
+				
 				<li><a href="<?php echo get_bloginfo('template_url')?>/politika-konfidencialnosti/">Политика конфиденциальности</a></li>
 				<li><a href="<?php echo get_bloginfo('template_url')?>/polzovatelskoe-soglashenie/">Пользовательское соглашение</a></li>
 			</ul>

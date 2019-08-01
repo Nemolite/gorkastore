@@ -18,3 +18,19 @@
 	color:#fff;
 	text-align:center;
 }
+
+.fix-a-header {
+	font-size: 14px;
+	margin: 0;
+}
+
+.fix-a-header a {
+	color: #96BEFF;
+}
+
+.fix-a-block {
+	width: 120%;
+	height: auto;
+	margin-left: 20px;
+
+}
