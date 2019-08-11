@@ -34,3 +34,22 @@
 	margin-left: 20px;
 
 }
+
+.fix-content-area {
+	width:80%;
+	margin:0 auto;
+}
+
+.fix-page-title {
+	font-size:26px;
+}
+
+.fix-error-404 {
+	width:400px;
+	height:400px;
+	margin:0 auto;
+}
+
+.fix-bg-color {
+	background-color:#D5D3EA;
+}

@@ -79,7 +79,7 @@ if ( ! function_exists( 'gorka_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'gorka' ),
+						__( 'Оставьте комментарии <span class="screen-reader-text"> на %s</span>', 'gorka' ),
 						array(
 							'span' => array(
 								'class' => array(),

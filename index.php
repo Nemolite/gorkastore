@@ -95,7 +95,7 @@ get_header();
 					<div class="catalog-item grid item1">
 
 						<figure class="effect-oscar">
-							<img src="<?php echo get_bloginfo('template_url')?>/assets/image/sourse-items/1item-wover.png" width="100%" />
+							<img src="<?php echo get_bloginfo('template_url')?>/assets/image/sourse-items/akk200.jpg" width="100%" />
 							<figcaption>
 								<br>
 								<h2><span>Аксессуары</span></h2>
@@ -244,7 +244,7 @@ get_header();
 					
 					<div class="catalog-item grid item13">
 						<figure class="effect-oscar">
-							<img src="<?php echo get_bloginfo('template_url')?>/assets/image/sourse-items/running-suit.jpg" width="100%" />
+							<img src="<?php echo get_bloginfo('template_url')?>/assets/image/sourse-items/run200.jpeg" width="100%" />
 							<figcaption>
 								<br>
 								<h2>Беговая <br><span>форма</span></h2>

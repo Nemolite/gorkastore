@@ -16,6 +16,7 @@ function gorka_primary_menu(){
 		'walker' => new EST_Walker_Nav
 	));
 }
+// Регистрация мобильного меню
 function gorka_mobile_menu(){
 	wp_nav_menu(array(
 		'theme_location' => 'mobile',

@@ -11,7 +11,17 @@ require get_template_directory() . '/includes/widget-areas.php';
 require get_template_directory() . '/includes/enqueue-script-style.php';
 /*   подключение вспомогательные функции */
 require get_template_directory() . '/includes/helpers.php';
-/* menu */
+
+/* menu 
+*  Функции: 
+*  gorka_primary_menu()
+*  gorka_mobile_menu()
+*
+*  Класс:
+*
+*  class EST_Walker_Nav // Настройка новигации меню, подключение классов и т.д
+*
+*/
 require get_template_directory() . '/includes/navigations.php';
 
 /**

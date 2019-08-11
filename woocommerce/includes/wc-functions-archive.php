@@ -26,7 +26,7 @@ add_action( 'woocommerce_before_main_content', 'gorka_archive_subwrapper_start',
 function gorka_archive_subwrapper_start(){
     if( ! is_product() ){
 ?>
-        <div class="shop-grid-content col s12 m10 l10 row">
+        <div class="shop-grid-content col s12 m10 l10 row fix-bg-color">
 <?php
     }
 }

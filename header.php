@@ -38,7 +38,7 @@
 			* @hooked gorka_modal_mobile_search - 70
 			*
 			*/
-
+// Функции находяться в файле custom-header.php в папке includes
 			do_action('header_parts'); 
 		?>
 
