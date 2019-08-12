@@ -19,13 +19,36 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
+
+/**
+ * Hook: fix-woocommerce_before_main_content.
+ *
+ * @hooked gorka_add_breadcrumbs - 10
+ *
+ *  стандартный хук woocommerce_breadcrumb отключен 
+ *  смотри woocommerce/includes/wc-functions-single.php строка 4 
+ *
+ * @hooked gorka_woocommerce_seek_category' - 20 ()
+ *
+ * Функция gorka_woocommerce_seek_category в файле wc-functions-archive.php
+ * папка woocommerce/includes
+ *
+ *  Заглушка, пустой блок
+ *  @hooked fix_zero
+ */
+
+do_action('fix-woocommerce_before_main_content');
+
+
 /**
  * Hook: woocommerce_before_main_content.
  *
  * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * Функция woocommerce_output_content_wrapper в файле wc-functions-archive.php
  *
- * @hooked woocommerce_breadcrumb - 20
+ * Функция woocommerce_output_content_wrapper в файле wc-functions-archive.php
+ * папка woocommerce/includes
+ *
+ 
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
 do_action( 'woocommerce_before_main_content' );
@@ -34,7 +57,9 @@ do_action( 'woocommerce_before_main_content' );
 <!-- Начала заголовка категории-->
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+	<div class="fix-woocommerce-products-header">
 		<h1 class="woocommerce-products-header__title page-title fix-page-title"><?php woocommerce_page_title(); ?></h1>
+	</div>	
 	<?php endif; ?>
 
 	<?php
@@ -45,6 +70,9 @@ do_action( 'woocommerce_before_main_content' );
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
 	do_action( 'woocommerce_archive_description' );
+	
+	
+	
 	?>
 </header>
 <!-- Завершение загловка категории-->

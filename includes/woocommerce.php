@@ -245,3 +245,6 @@ if ( ! function_exists( 'gorka_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+
+
