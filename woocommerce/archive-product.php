@@ -43,13 +43,25 @@ do_action('fix-woocommerce_before_main_content');
 /**
  * Hook: woocommerce_before_main_content.
  *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_output_content_wrapper - 10 - remove_action
+ *  (outputs opening divs for the content)
+ * Данный хук удален и вместо него подключен: 
+ *
+ * @hooked gorka_woocommerce_wrapper_before -10 add_action
+ *
+ * (смотри файл woocommerce.php в паке includes)
  *
  * Функция woocommerce_output_content_wrapper в файле wc-functions-archive.php
  * папка woocommerce/includes
  *
- 
+ *
  * @hooked WC_Structured_Data::generate_website_data() - 30
+ *
+ * Добавлен хук
+ * @hooked gorka_archive_subwrapper_start 
+ * (woocommerce/includes/wc-functions-archive.php)
+ *
+ *
  */
 do_action( 'woocommerce_before_main_content' );
 
@@ -58,7 +70,9 @@ do_action( 'woocommerce_before_main_content' );
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 	<div class="fix-woocommerce-products-header">
-		<h1 class="woocommerce-products-header__title page-title fix-page-title"><?php woocommerce_page_title(); ?></h1>
+		<h1 class="woocommerce-products-header__title page-title fix-page-title">
+		   <?php woocommerce_page_title(); ?>
+		</h1>
 	</div>	
 	<?php endif; ?>
 

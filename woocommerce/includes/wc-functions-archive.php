@@ -27,7 +27,19 @@ function gorka_woocommerce_seek_category() { ?>
 	    <div class="fix-seek-header">
 		     <h3><i class="fa fa-search" aria-hidden="true"></i>   Фильтр товаров</h3>
 		</div>
-	<h1>Блок фильтров</h1>
+	<!-- 	
+		/*
+        *  Выджеты для фильтров в катеоргии товаров
+        *
+        */
+-->
+<h3>Блок фильтра товаров</h3>
+     <?php
+	
+		dynamic_sidebar('fix-seek-category');
+     ?>
+
+	  
 	</div>
 <?php }
 
@@ -39,6 +51,7 @@ function fix_zero() { ?>
 	    
 	</div>
 <?php }
+
 
 
 /**
