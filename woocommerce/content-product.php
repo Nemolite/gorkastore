@@ -30,14 +30,25 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * Hook: woocommerce_before_shop_loop_item.
 	 *
 	 * @hooked woocommerce_template_loop_product_link_open - 10
+	 *
+	 * fix
+	 * @hooked gorka_loop_product_div_open - 5 - добавляется класс
+	 * gorka-shop-prodict-card
+	 * (woocommerce/includes/wc-functions-archive.php)
+	 *
 	 */
 	do_action( 'woocommerce_before_shop_loop_item' );
 
 	/**
 	 * Hook: woocommerce_before_shop_loop_item_title.
 	 *
-	 * @hooked woocommerce_show_product_loop_sale_flash - 10
-	 * @hooked woocommerce_template_loop_product_thumbnail - 10
+	 *
+	 * @hooked woocommerce_show_product_loop_sale_flash - 10  
+	 * @hooked woocommerce_template_loop_product_thumbnail - 10 
+	 *
+	 * fix
+	 * хук выводит изображение товара
+	 *  
 	 */
 	do_action( 'woocommerce_before_shop_loop_item_title' );
 
@@ -45,6 +56,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * Hook: woocommerce_shop_loop_item_title.
 	 *
 	 * @hooked woocommerce_template_loop_product_title - 10
+	 *
+	 * fix
+	 * хук выводит название товара
 	 */
 	do_action( 'woocommerce_shop_loop_item_title' );
 

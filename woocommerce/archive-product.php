@@ -99,8 +99,21 @@ if ( woocommerce_product_loop() ) {
 	 * Hook: woocommerce_before_shop_loop.
 	 *
 	 * @hooked woocommerce_output_all_notices - 10
-	 * @hooked woocommerce_result_count - 20
-	 * @hooked woocommerce_catalog_ordering - 30
+	 *
+	 * fix
+	 * Следующие хуки удалены
+	 * @hooked woocommerce_result_count - 20       (remove_filter)
+	 * @hooked woocommerce_catalog_ordering - 30    (remove_filter)
+	 *  (woocommerce/includes/wc-functions-archive.php)
+	 * Вместо них добавлены хуки:
+	 * 
+	 * @hooked gorka_wrapper_count_and_ordering_start - 5 (add_action)
+	 * @hooked gorka_wrapper_count_and_ordering_end - 40  (add_action)
+	 * (woocommerce/includes/wc-functions-archive.php)
+	 *
+	 * @hooked gorka_woocommerce_product_columns_wrapper - 40 (add_action)
+	 *  (includes/woocommerce.php)
+	 *
 	 */
 	do_action( 'woocommerce_before_shop_loop' );
 
@@ -116,7 +129,11 @@ if ( woocommerce_product_loop() ) {
 			 * @hooked WC_Structured_Data::generate_product_data() - 10
 			 */
 			do_action( 'woocommerce_shop_loop' );
-
+            
+            /*
+             *	fix		
+			 *  Подключение фйла вывода товаров категории
+			 */
 			wc_get_template_part( 'content', 'product' );
 		}
 	}
@@ -127,6 +144,10 @@ if ( woocommerce_product_loop() ) {
 	 * Hook: woocommerce_after_shop_loop.
 	 *
 	 * @hooked woocommerce_pagination - 10
+	 *
+	 * fix
+	 * @hooked gorka_woocommerce_product_columns_wrapper_close - 40
+	 * (includes/woocommerce.php)
 	 */
 	do_action( 'woocommerce_after_shop_loop' );
 } else {

@@ -151,6 +151,11 @@ function gorka_add_class_loop_item( $classes ) {
     return $classes;
 }
 
+/*
+* fix
+* Обображение товаров в категории
+*/
+
 
 /**
  * ------------------
@@ -166,6 +171,7 @@ function gorka_loop_product_div_open(){
     ?>
     <div class="gorka-shop-product-card">
     <?php
+	 
 }
 /**
  * gorka_loop_product_div_close
@@ -194,12 +200,25 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 remove_filter( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_filter( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
+/*
+* fix
+*  
+*/
+
 add_action('woocommerce_before_shop_loop', 'gorka_wrapper_count_and_ordering_start', 5 );
 function gorka_wrapper_count_and_ordering_start(){
     ?>
     <div class="gorka-results-and-oredering">
         <div class="gorka-results-left">
-            <?php woocommerce_result_count(); ?>
+            <?php 
+			/*
+			* fix
+			*  Убрано отображение резульатов
+			*  Эту строку....(Отображение 1–12 из 30 результатов)
+			*/
+			//woocommerce_result_count(); 
+			
+			?>
         </div>
     <?php
 }
@@ -208,11 +227,26 @@ add_action('woocommerce_before_shop_loop', 'gorka_wrapper_count_and_ordering_end
 function gorka_wrapper_count_and_ordering_end(){
     ?>
         <div class="gorka-ordering-right">
-            <?php woocommerce_catalog_ordering(); ?>
+            <?php 
+			/*
+			* fix
+			* Убрано для того чтобы перенести раздел фильтров 
+			*/
+			
+			//woocommerce_catalog_ordering(); 
+			?>
         </div>
     </div>
     <?php
 }
+
+
+/*
+* fix
+* Пагинация 
+*
+*/
+
 add_action('woocommerce_after_shop_loop', 'gorka_wrapper_pagination_start', 5 );
 function gorka_wrapper_pagination_start(){
     ?>
@@ -225,3 +259,31 @@ function gorka_wrapper_pagination_end(){
         </div>
     <?php
 }
+
+
+/*
+* fix
+* Описание категории
+* С начало отцепляем хук и переподключаем свой
+*
+*/
+
+
+remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10 );
+add_action('woocommerce_archive_description', 'fix_woocommerce_taxonomy_archive_description', 10 );
+
+if ( ! function_exists( 'fix_woocommerce_taxonomy_archive_description' ) ) {
+
+	/**
+	 * Show an archive description on taxonomy archives.
+	 */
+	function fix_woocommerce_taxonomy_archive_description() {
+		if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
+			$term = get_queried_object();
+
+			if ( $term && ! empty( $term->description ) ) {
+				echo '<div class="term-description fix-term-description">' . wc_format_content( $term->description ) . '</div>'; // WPCS: XSS ok.
+			}
+		}
+	}
+} 	
