@@ -35,15 +35,21 @@ function gorka_woocommerce_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gorka_woocommerce_scripts' );
 
+/*
+* Конопка таб, в карточке товаров
+* fix 
+* Меняем цвет
+*/
+
 add_filter('woocommerce_product_tabs', 'gorka_product_tabs');
 function gorka_product_tabs($tabs){
     if ( ! empty( $tabs ) ) : ?>
 
 	<div class="woocommerce-tabs wc-tabs-wrapper additional-info">
-		<ul class="tabs wc-tabs gorka-tabs" role="tablist">
+		<ul class="tabs wc-tabs gorka-tabs" id="fix-gorka-tabs" role="tablist">
 			<?php foreach ( $tabs as $key => $tab ) : ?>
 				<li class="<?php echo esc_attr( $key ); ?>_tab" id="tab-title-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
-					<a href="#tab-<?php echo esc_attr( $key ); ?>"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ); ?></a>
+					<a id="fix-tabs-a" href="#tab-<?php echo esc_attr( $key ); ?>"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ); ?></a>
 				</li>
 			<?php endforeach; ?>
 		</ul>

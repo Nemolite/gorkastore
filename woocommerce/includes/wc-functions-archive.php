@@ -22,7 +22,10 @@ add_action( 'fix-woocommerce_before_main_content', 'gorka_add_breadcrumbs',10);
 
 add_action( 'fix-woocommerce_before_main_content', 'gorka_woocommerce_seek_category',20);
 
-function gorka_woocommerce_seek_category() { ?>
+function gorka_woocommerce_seek_category() { 
+   if (is_archive()){
+      ?>
+
 	<div class="fix-seek fix-border-color">
 	    <div class="fix-seek-header">
 		     <h3><i class="fa fa-search" aria-hidden="true"></i>   Фильтр товаров</h3>
@@ -32,16 +35,17 @@ function gorka_woocommerce_seek_category() { ?>
         *  Выджеты для фильтров в катеоргии товаров
         *
         */
--->
-<h3>Блок фильтра товаров</h3>
+	-->
+   <h4>Блок фильтра товаров</h4>
      <?php
-	
+	    
 		dynamic_sidebar('fix-seek-category');
+		
      ?>
 
 	  
 	</div>
-<?php }
+   <?php }}
 
 add_action( 'fix-woocommerce_before_main_content', 'fix_zero',30);
 
@@ -76,7 +80,7 @@ add_action( 'woocommerce_before_main_content', 'gorka_archive_subwrapper_start',
 function gorka_archive_subwrapper_start(){
     if( ! is_product() ){
 ?>
-        <div class="shop-grid-content col s12 m10 l10 row fix-border-color">
+        <div class="shop-grid-content col s12 m12 l12 row fix-border-color">
 <?php
     }
 }

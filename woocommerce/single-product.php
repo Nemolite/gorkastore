@@ -21,6 +21,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
+   <?php
+   
+   /**
+ * Hook: fix-woocommerce_before_main_content.
+ *
+ * @hooked gorka_add_breadcrumbs - 10
+ *
+ *  стандартный хук woocommerce_breadcrumb отключен 
+ *  смотри woocommerce/includes/wc-functions-single.php строка 4 
+ *
+ * @hooked gorka_woocommerce_seek_category' - 20 ()
+ *
+ * Функция gorka_woocommerce_seek_category в файле wc-functions-archive.php
+ * папка woocommerce/includes
+ *
+ *  Заглушка, пустой блок
+ *  @hooked fix_zero
+ */
+
+do_action('fix-woocommerce_before_main_content');
+   
+   ?>
+
+
+
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.

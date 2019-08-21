@@ -21,7 +21,7 @@ add_action('woocommerce_before_single_product', 'gorka_wrapper_product_start', 5
 function gorka_wrapper_product_start(){
 	?>
 	<div class="single-section">
-		<div class="container row">
+		<div class="container row fix-border">
 		
 	<?php 
 }
@@ -62,5 +62,12 @@ function gorka_wrapper_product_entry_end() {
 	</div>
 	<?php
 }
+
+?>
+
+<?php 
+
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+//  conten-single-prodict.php
 
 ?>

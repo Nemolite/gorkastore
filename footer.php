@@ -22,6 +22,12 @@
   	</div>
 	</div><!-- #primary -->
 	
+	
+	<div class="fix-space-footer">
+	 <!-- пустой блок-->
+	</div>
+	
+	
 	<footer class="row main-footer">
 		<div class="upfooter">		
 		<div class="col xl3 l6 m6  logo-footer center">
@@ -42,21 +48,20 @@
 		<div class="col xl3 l6 m6 s12">
 			<ul>
 				<li>Покупателю</li>
-				<li><a href="<?php echo get_bloginfo('template_url')?>/sposoby-oplaty/">Способы оплаты</a></li>
-				<li><a href="<?php echo get_bloginfo('template_url')?>/informaciya-o-dostavke/">Условия доставки</a></li>
-				<li><a href="<?php echo get_bloginfo('template_url')?>/svyazatsya-s-nami/">Связаться с нами</a></li>
+				<li><a href="<?php echo get_bloginfo('template_url');?>/sposoby-oplaty/">Способы оплаты</a></li>
+				<li><a href="<?php echo get_bloginfo('template_url');?>/informaciya-o-dostavke/">Условия доставки</a></li>
+				<li><a href="<?php echo get_bloginfo('template_url');?>/kak-dobratsya/">Связаться с нами</a></li>
 				<!-- <li><a href="#showMap" class="modal-trigger">Мы на карте</a></li> -->
 			</ul>
 		</div>
 		<div class="col xl3 l6 m6 s12">
 			<ul>
-				<li>Магазин</li>
-				<li><a href="<?php echo get_bloginfo('template_url')?>/o-nas/">О нас</a></li>
-			
-				<li><a href="<?php echo get_bloginfo('template_url')?>/kak-dobratsya/">Как добратся</a></li>
-				<!--	
-				<li><a href="">Адрес</a></li>
-				-->
+				<li><a class="fix-color-a-footer" href="<?php echo get_bloginfo('template_url');?>/shop/">Магазин</a></li> 
+				<li><a href="<?php echo get_tag_link(60);?>">Все для Бега</a></li>
+				<li><a href="<?php echo get_tag_link(61);?>">Лыжный спорт</a></li>
+				<li><a href="<?php echo get_tag_link(62);?>">Велоаксессураы</a></li>
+				<li><a href="<?php echo get_tag_link(72);?>">Фитнес</a></li>
+				
 			</ul>
 		</div>
 		<div class="col xl3 l6 m6 s12">

@@ -152,3 +152,12 @@
 	border:1px dotted #05037E;
 	border-radius:5px;
 }
+
+.fix-space-footer {
+	width:100%;
+	height:50px;
+}
+
+.fix-color-a-footer {
+	color:#92278F;
+}
